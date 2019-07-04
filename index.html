@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Key Event Checker</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./index.js" type="module"></script>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <table class="samples">
+        <tr>
+            <th>input text</th>
+            <th>input button</th>
+            <th>textarea</th>
+            <th>forcusable element</th>
+            <th>contenteditable element</th>
+        </tr>
+        <tr>
+            <td><input type="text" tabindex="1" class="input-target"></td>
+            <td><input type="button" tabindex="2" class="input-target" value="button"></td>
+            <td><textarea tabindex="3" class="input-target"></textarea></td>
+            <td>
+                <div tabindex="4" class="forcusable input-target">
+                    div
+                </div>
+            </td>
+            <td>
+                <div tabindex="5" contenteditable="true" class="forcusable input-target">
+                    div
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="app">
+        <table>
+            <tr>
+                <th>Last Event Type</th>
+                <td colspan="3">{{ lastEvent }}</td>
+            </tr>
+            <tr>
+                <th></th>
+                <template v-for="value, key in keyEventProperty" >
+                    <th>
+                        {{ key }}
+                    </th>
+                </template>
+            </tr>
+            <tr v-for="_, k in keyEventProperty['keydown']">
+                <th>
+                    {{ k }}
+                </th>
+                <td>
+                    {{ keyEventProperty['keydown'][k] }}
+                </td>
+                <td>
+                    {{ keyEventProperty['keyup'][k] }}
+                </td>
+                <td>
+                    {{ keyEventProperty['keypress'][k] }}
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

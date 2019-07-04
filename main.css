@@ -1,0 +1,26 @@
+* {
+    color: #3b3b3b;
+}
+
+table {
+    border-collapse: collapse;
+    border-top: 1px solid #3b3b3b;
+    border-left: 1px solid #3b3b3b;;
+    margin: 16px;
+    table-layout: fixed;
+    width: 800px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #3b3b3b;;
+    border-right: 1px solid #3b3b3b;;
+}
+
+.samples td {
+    text-align: center;
+}
+
+.forcusable {
+    display: inline;
+}
