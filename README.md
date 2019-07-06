@@ -3,3 +3,5 @@
 ブラウザのKeyboardEventのプロパティと値を一覧表示します。
 
 外付けキーボードのkeyCode確認用に作ったものです
+
+https://hurumeki.github.io/keyevent-checker/
